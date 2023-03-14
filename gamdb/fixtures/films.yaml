@@ -1,0 +1,30 @@
+- model: films.movie
+  pk: 1
+  fields:
+    name: Top Gun   
+    year: 2022
+    description: Tom Cruise again...
+- model: films.movie
+  pk: 2
+  fields:
+    name: Shrek
+    year: 2001
+    description: Green dude
+- model: films.movie
+  pk: 3
+  fields:
+    name: Pulp Fiction
+    year: 1994
+    description: ''
+- model: films.movie
+  pk: 4
+  fields:
+    name: Fight Club
+    year: 1999
+    description: ''
+- model: films.movie
+  pk: 1
+  fields:
+    name: Samotáři 
+    year: 2000
+    description: ''
