@@ -1,5 +1,15 @@
 from django.shortcuts import render
-from .models import Movie
+from .models import Movie, Director
+
+def directors(request):
+    context = {
+        'logic': True,
+        'title': "Nejoblíbenější režiséři",
+        'directors': Director.objects.all()
+    }
+    print(context)
+    return render(request, 'directors.html', context)
+
 
 def homepage(request):
     context = {
@@ -7,4 +17,4 @@ def homepage(request):
     }
 
     return render(request, 'main.html', context)
-# Create your views here.
+
