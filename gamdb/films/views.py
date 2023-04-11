@@ -11,10 +11,16 @@ def directors(request):
     return render(request, 'directors.html', context)
 
 
-def homepage(request):
+def movies(request):
     context = {
         "movies": Movie.objects.all()
     }
+    return render(request, 'movies.html', context)
 
-    return render(request, 'main.html', context)
-
+def homepage(request):
+    context = {
+        # TODO use first 10 top rated
+        "movies": Movie.objects.all()
+    }
+    return render(request, 'homepage.html', context)
+  

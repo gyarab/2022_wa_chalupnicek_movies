@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+
+{% block title %}
+    Filmy | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1>Filmy</h1>
+<div class="row row-cols-1  row-cols-md-2 row-cols-lg-3 g-2">
+    {% for movie in movies %}
+    <div class="col">
+        <div class="card h-100">
+            <img class="card-img-top" src="https://place-hold.it/180x100/" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie.name }}</h5>
+                <p class="card-text ">{{ movie.description }}</p>
+            </div>
+            <div class="card-footer text-end">
+                <a href="#" class="btn btn-primary">Detaily</a>
+            </div>
+        </div>
+    </div>
+        
+    {% endfor %}
+</div>
+{% endblock content %}
