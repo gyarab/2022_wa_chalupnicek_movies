@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    {{director.name}} | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1>{{director.name}}</h1>
+<h2>{{director.birth_year}}</h2>
+<p>{{ director.description|safe }}</p>
+{% endblock content %}

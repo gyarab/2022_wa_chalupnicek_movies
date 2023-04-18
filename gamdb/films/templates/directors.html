@@ -5,19 +5,17 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{ title|default:"Režiséři" }}</h1>
+<h1>Režiséři</h1>
 
 {# Tady bude seznam režisérů #}
 <div class="row row-cols-2">
     {% for d in directors %}
     <div class="card">
-        <img src="https://place-hold.it/300x200" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ d.name }}{% if d.birth_year %}
             &ndash; {{ d.birth_year }}
             {% endif %}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="{% url 'director' d.id %}" class="btn btn-primary">Detail</a>
         </div>
     </div>
     {% endfor %}

@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    {{actor.name}} | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1>{{actor.name}}</h1>
+<h2>{{actor.birth_year}}</h2>
+<img src="{% if actor.photo_url %}{{actor.photo_url}}{% else %}https://place-hold.it/180x100/{% endif %}" alt="Card image cap">
+<p>{{ actor.description|safe }}</p>
+{% endblock content %}
