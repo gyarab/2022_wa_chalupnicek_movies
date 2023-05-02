@@ -21,9 +21,10 @@ class Movie(models.Model):
         # return out
 
 class Comment(models.Model):
-    author = models.CharField(max_length=255)
-    text = models.TextField()
-    rating = models.IntegerField()
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    author = models.CharField(max_length=255, blank=True)
+    text = models.TextField(blank=True)
+    rating = models.IntegerField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
         
 

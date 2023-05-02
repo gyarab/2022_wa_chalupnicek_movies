@@ -9,4 +9,20 @@
 <h2>{{movie.avg_rating}}</h2>
 <img src="{% if movie.image_url %}{{movie.image_url}}{% else %}https://place-hold.it/180x100/{% endif %}" alt="Card image cap">
 <p>{{ movie.description|safe }}</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Odeslat" />
+</form>
+
+{% for comment in comments %}
+<p>
+    <strong>{{ comment.author }}</strong>, {{ comment.created_at|date:"j. n. Y H:i" }}<br />
+    {% if comment.rating %}{{ comment.rating }}%<br />{% endif %}
+    {{ comment.text }}
+</p>
+<hr />
+{% endfor %}
+
 {% endblock content %}
