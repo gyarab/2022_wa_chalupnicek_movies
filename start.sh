@@ -10,7 +10,7 @@ set -e
 
 # ./manage.py migrate --check
 # auto apply migrations - may be dangerous
-./manage.py migrate
+# ./manage.py migrate
 
 
 if [ "$1" = 'uwsgi' ]; then
