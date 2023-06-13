@@ -8,14 +8,16 @@
 <h1>Režiséři</h1>
 
 {# Tady bude seznam režisérů #}
-<div class="row row-cols-2">
+<div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-2">
     {% for d in directors %}
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{ d.name }}{% if d.birth_year %}
-            &ndash; {{ d.birth_year }}
-            {% endif %}</h5>
-            <a href="{% url 'director' d.id %}" class="btn btn-primary">Detail</a>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ d.name }}{% if d.birth_year %}
+                &ndash; {{ d.birth_year }}
+                {% endif %}</h5>
+                <a href="{% url 'director' d.id %}" class="btn btn-primary">Detail</a>
+            </div>
         </div>
     </div>
     {% endfor %}

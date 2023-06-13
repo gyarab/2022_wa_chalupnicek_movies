@@ -19,17 +19,19 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
+            {% with request.resolver_match.url_name as url_name %}
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'movies' %}">Filmy</a>
+                <a class="nav-link{% if url_name == 'movies' %} active{% endif %}" href="{% url 'movies' %}">Filmy</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'directors' %}">Režiséři</a>
+                <a class="nav-link{% if url_name == 'directors' %} active{% endif %}" href="{% url 'directors' %}">Režiséři</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'actors' %}">Herci</a>
+                <a class="nav-link{% if url_name == 'actors' %} active{% endif %}" href="{% url 'actors' %}">Herci</a>
               </li>
             </ul>
+            {% endwith %}
           </div>
         </div>
       </nav>

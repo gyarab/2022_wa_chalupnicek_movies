@@ -1,30 +1,155 @@
 - model: films.movie
   pk: 1
   fields:
-    name: Top Gun   
+    name: "Top Gun: Maverick"
     year: 2022
-    description: Tom Cruise again...
+    image_url: //image.pmgstatic.com/cache/resized/w663/files/images/film/posters/166/205/166205318_28cfab.jpg
+    avg_rating: 87
+    description: Pete „Maverick“ Mitchell (Tom Cruise) k smrti rád pilotuje stíhačky. Dokonce tak, že se už přes třicet let úspěšně brání povýšení ve strukturách amerického letectva, protože to by ho z kokpitu vyhnalo do vyhřáté kanceláře. Maverick byl navíc vždycky magnetem na průšvihy, což se s armádní kariérou taky docela vylučuje.
+    director: 1
+    actors:
+      - 2
+    genres:
+      - 1
+      - 2
+
 - model: films.movie
   pk: 2
   fields:
     name: Shrek
     year: 2001
-    description: Green dude
+    image_url: //image.pmgstatic.com/cache/resized/w663/files/images/film/posters/158/600/158600745_6cc2db.jpg
+    avg_rating: 87
+    description: Odvážný Shrek (Mike Myers) pátrá se svým kamarádem, sympatickým a chvastounským oslem (Eddie Murphy) po krásné a divoké princezně Fioně (Cameron Diaz). Za její záchranu chce od intrikána Lorda Farquadda (John Lithgow) získat zpět svou milovanou bažinu. 
+    director: 2
+    genres:
+      - 3
+      - 4
+      - 5
+      - 6
+
 - model: films.movie
   pk: 3
   fields:
-    name: Pulp Fiction
+    name: "Pulp Fiction: Historky z podsvětí"
     year: 1994
-    description: ''
+    image_url: //image.pmgstatic.com/cache/resized/w663/files/images/film/posters/158/336/158336635_61bc7c.jpg
+    avg_rating: 91
+    description: Nejkultovnější z kultovních filmů 90. let je autorskou Biblí Quentina Tarantina, který v tomto opusu definoval základní prvky své režisérské poetiky a vytvořil dílo rozněcující náročné kritiky na festivalu v Cannes, levicové a pravicové intelektuály i zedníky dopřávající si po těžké šichtě trochu oddychu.
+    director: 3
+    genres:
+      - 7
+      - 2
+
+
 - model: films.movie
   pk: 4
   fields:
     name: Fight Club
     year: 1999
-    description: ''
+    image_url: //image.pmgstatic.com/cache/resized/w663/files/images/film/posters/162/468/162468180_3e343f.jpg
+    avg_rating: 88
+    description: Když nemůžete půl roku usnout, celý okolní svět vám začne připadat jako nekonečný sen. Všechno kolem vás je nedokonalou xeroxovou kopií sebe sama. Chodíte do práce, díváte se na televizi a jste vděčni za to, když občas ztratíte vědomí a nevíte o světě. Lidí s podobnými problémy moc není, ale mladý úspěšný úředník, který si říká Jack, je jedním z nich. Má slušnou práci, vydělává slušné peníze, ale trpí nejtěžší formou nespavosti. Na služební cestě se Jack seznámí s Tylerem Durdenem, který mu nabídne příbytek pod podmínkou, že mu vrazí pořádnou ránu. Tato "výměna názorů" se oběma zalíbí a brzy vznikne první Klub rváčů. Místo, kde můžou mladí muži, znechucení světem, odložit své starosti a stát se na pár minut zvířaty.
+    director: 4
+    actors:
+      - 1
+    genres:
+      - 8
+      - 2
+
+
 - model: films.movie
-  pk: 1
+  pk: 5
   fields:
     name: Samotáři 
     year: 2000
-    description: ''
+    image_url: //image.pmgstatic.com/cache/resized/w663/files/images/film/posters/158/305/158305223_c64891.jpg
+    avg_rating: 84
+    description: Sedm mladých lidí ve věku od 23 do 33 let se na konci devadesátých let ve velkém městě pokouší praktikovat cosi, čemu se dříve říkalo milostný vztah. A tak na sebe milostně narážejí a nechávají se unášet napříč dlouhodobějšími či krátkodobějšími vztahy, které je dovedou zpět do samoty. Robert pracuje v cestovní kanceláři a rád rozplétá a splétá osudy lidí. Napomůže rozchodu Hanky a Petra, který se pokouší pochopit život skrze nahrávky „opravdového života“ pouštěné do éteru. Zatímco je Hanka pronásledována Ondřejem, do té doby uznávaným lékařem a otcem rodiny, seznamuje se s Jakubem, jehož pozitivnímu pohledu na svět pomáhá pravidelné užívání marihuany. Na druhé straně to ale způsobuje zhoršování jeho krátkodobé paměti, takže se v jejich vztahu objevují problémy. Zklamaná Hanka hledá pochopení u rodičů, ale doma najde jen dvacet Japonců sledujících „normální rodinku při normální večeři“.
+    genres:
+      - 6
+      - 2
+
+
+- model: films.director
+  pk: 1
+  fields:
+    name: Joseph Kosinski
+    birth_year: 1974
+
+- model: films.director
+  pk: 2
+  fields:
+    name: Andrew Adamson
+    birth_year: 1966
+
+- model: films.actor
+  pk: 1
+  fields:
+    name: Brad Pitt 
+    birth_year: 1963
+    description: "Od začátku devadesátých let přitahuje pozornost diváků i médií, ale protože nehýří informacemi ani aférami ze svého soukromí, nezbývá, než si přiznat, že Pitta téměř neznáme.   I když dnes nikdo nepochybuje o jeho hereckém talentu, nezapomene přitom ani okomentovat jeho vzhled. Tu tvář už Pittovi nikdo neodpáře, ačkoli tvrdí: „Kašlu na to jak vypadám, a celá ta hysterie okolo mne už mi leze krkem..."
+    photo_url: //image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/159/168/159168406_ea0e56.jpg
+
+- model: films.actor
+  pk: 2
+  fields:
+    name: Tom Cruise
+    birth_year: 1962
+    description: Největší hitmaker v Hollywoodu, v takové pozici se už roky nachází herecká hvězda Tom Cruise, herec, jenž se narodil v kočovné rodině, která se neustále stěhovala kvůli práci jeho otce (inženýra). Kvůli stěhování měl problémy s učením, které byly spojeny s jeho dyslexií a tak vynikal pouze ve sportu. Po dokončení střední školy se v roce 1980 odhodlal pro hereckou kariéru. Jako většina herců začínal v divadle a v menších rolích v divácky celkem úspěšných filmech…
+    photo_url: //image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/432/166432435_af1fc8.jpg
+
+- model: films.director
+  pk: 3
+  fields:
+    name: Quentin Tarantino
+    birth_year: 1963
+
+- model: films.director
+  pk: 4
+  fields:
+    name: David Fincher
+    birth_year: 1962
+
+
+
+- model: films.genre
+  pk: 1
+  fields:
+    name: Akční
+
+- model: films.genre
+  pk: 2
+  fields:
+    name: Drama
+
+- model: films.genre
+  pk: 3
+  fields:
+    name: Animovaný
+
+- model: films.genre
+  pk: 4
+  fields:
+    name: Dobrodružný
+
+- model: films.genre
+  pk: 5
+  fields:
+    name: Rodinný
+
+- model: films.genre
+  pk: 6
+  fields:
+    name: Komedie
+
+- model: films.genre
+  pk: 7
+  fields:
+    name: Krimi
+
+- model: films.genre
+  pk: 8
+  fields:
+    name: Thriller
+  
