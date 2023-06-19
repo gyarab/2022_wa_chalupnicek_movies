@@ -10,14 +10,14 @@ services:
     labels:
       - "traefik.enable=true"
 
-      - "traefik.http.routers.gawa-vch-http.rule=Host(`vch.gawa.dtbox.cz`)"
-      - "traefik.http.routers.gawa-vch-http.entrypoints=web"
-      - "traefik.http.routers.gawa-vch-http.middlewares=gawa-vch-redirect-https@docker"
+      - "traefik.http.routers.gawa-vch2-http.rule=Host(`vch.gawa.dtbox.cz`)"
+      - "traefik.http.routers.gawa-vch2-http.entrypoints=web"
+      - "traefik.http.routers.gawa-vch2-http.middlewares=gawa-vch2-redirect-https@docker"
 
-      - "traefik.http.middlewares.gawa-vch-redirect-https.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.gawa-vch-redirect-https.redirectscheme.permanent=true"
+      - "traefik.http.middlewares.gawa-vch2-redirect-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.gawa-vch2-redirect-https.redirectscheme.permanent=true"
 
-      - "traefik.http.routers.gawa-vch-https.rule=Host(`vch.gawa.dtbox.cz`)"
-      - "traefik.http.routers.gawa-vch-https.entrypoints=websecure"
-      - "traefik.http.routers.gawa-vch-https.tls=true"
-      - "traefik.http.routers.gawa-vch-https.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.gawa-vch2-https.rule=Host(`vch.gawa.dtbox.cz`)"
+      - "traefik.http.routers.gawa-vch2-https.entrypoints=websecure"
+      - "traefik.http.routers.gawa-vch2-https.tls=true"
+      - "traefik.http.routers.gawa-vch2-https.tls.certresolver=letsencrypt"
