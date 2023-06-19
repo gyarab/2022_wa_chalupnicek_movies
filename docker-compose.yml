@@ -21,3 +21,25 @@ services:
       - "traefik.http.routers.gawa-vch2-https.entrypoints=websecure"
       - "traefik.http.routers.gawa-vch2-https.tls=true"
       - "traefik.http.routers.gawa-vch2-https.tls.certresolver=letsencrypt"
+
+  static:
+    image: nginx:alpine
+    restart: unless-stopped
+
+    volumes:
+      - ./gamdb/static:/usr/share/nginx/html:ro
+
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.routers.gawa-vch2-static-http.rule=Host(`vch2.gawa.dtbox.cz/static`)"
+      - "traefik.http.routers.gawa-vch2-static-http.entrypoints=web"
+      - "traefik.http.routers.gawa-vch2-static-http.middlewares=gawa-vch2-static-redirect-https@docker"
+
+      - "traefik.http.middlewares.gawa-vch2-static-redirect-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.gawa-vch2-static-redirect-https.redirectscheme.permanent=true"
+
+      - "traefik.http.routers.gawa-vch2-static-https.rule=Host(`vch2.gawa.dtbox.cz/static`)"
+      - "traefik.http.routers.gawa-vch2-static-https.entrypoints=websecure"
+      - "traefik.http.routers.gawa-vch2-static-https.tls=true"
+      - "traefik.http.routers.gawa-vch2-static-https.tls.certresolver=letsencrypt"
